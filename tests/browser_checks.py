@@ -27,6 +27,7 @@ class BrowserChecks(unittest.TestCase):
         self.context = self.browser.new_context(locale="en-US", viewport={"width": 390, "height": 844})
         self.page = self.context.new_page()
         self.page.set_default_timeout(5000)
+        self.page.set_default_navigation_timeout(30000)
 
     def tearDown(self):
         self.context.close()
